@@ -11,6 +11,10 @@ docker push mamb0/assign2-image
 docker run -p 30000:30000 mamb0/assign2-image
 #kubernetis commands
 kubectl apply -f <filename.yaml>
+kubectl create namespace <your-username>
+
+#namespace was created and used
+mamb0
 
 expected output with commands:
 
