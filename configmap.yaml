@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: assignment2config
+  namespace: mamb0
+data:
+  configValue: snake

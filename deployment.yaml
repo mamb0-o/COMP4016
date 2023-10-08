@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assingment2deployment
+  namespace: mamb0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yourapp
+  template:
+    metadata:
+      labels:
+        app: yourapp
+    spec:
+      containers:
+        - name: yourapp-container
+          image: mamb0/assign2-image
+          envFrom:
+            - configMapRef:
+                name: assignment2config
+            - secretRef:
+                name: assignment2secret
+          env:
+            - name: ENV_VALUE
+              value: environmentSnake
+          ports:
+            - containerPort: 30000
+          
+

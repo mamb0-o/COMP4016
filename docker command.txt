@@ -1,0 +1,5 @@
+docker login 
+docker build -t assign1-image:assign1 .
+docker tag assign1-image:assign1 mamb0/assign1-image
+docker push mamb0/assign1-image
+docker run -p 8080:8080 mamb0/assign1-images

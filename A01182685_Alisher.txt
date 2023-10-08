@@ -1,0 +1,20 @@
+# Alisher Shamayev
+#A01182685
+
+Assignment 2:
+Repository: https://github.com/mamb0-o/COMP4016 "It's private, send you an invite"
+Image: mamb0/assign2-image , command to pull- docker pull mamb0/assign2-image:latest
+Kubernetis namespace: mamb0
+Command: docker run -p 8080:8080 mamb0/assign1-images
+Commments: # all the docker commands
+docker login 
+docker build -t assign2-imag:assign2 .
+docker tag assign2-imag:assign2 mamb0/assign2-image
+docker push mamb0/assign2-image
+docker run -p 30000:30000 mamb0/assign2-image
+#node command
+npm init
+npm install
+#kubernetis commands
+kubectl apply -f <filename.yaml>
+#output

@@ -1,5 +1,5 @@
 {
-  "name": "assign1",
+  "name": "assign2",
   "version": "1.0.0",
   "description": "docker hw",
   "main": "server.js",
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@kubernetes/client-node": "^0.19.0",
     "body-parser": "^1.20.2",
     "express": "^4.18.2"
   }
