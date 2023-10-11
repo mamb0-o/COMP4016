@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 
 const kubernetesConfig = new kubernetesApi.KubeConfig();
 kubernetesConfig.loadFromDefault();
-const k8 = kubernetesConfig.makeApiClient(kubernetesApi.CoreV1Api);
 
 //Assingmnet 1
 
@@ -30,14 +29,10 @@ app.get('/kill', (req, res) => {
 
 // Read from Kubernetes ConfigMap
 app.get('/configValue', async (req, res) => {
-  try {
-    const configMapName ='assignment2config';
-    const namespace ='mamb0'; 
+  try{
+    const configval = process.env.configValue || "Something went wrong";
 
-    const configMapResponse = await k8.readNamespacedConfigMap(configMapName, namespace);
-    const configValue = configMapResponse.body.data.configValue;
-
-    res.send(configValue);
+    res.send(configval);
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -47,13 +42,9 @@ app.get('/configValue', async (req, res) => {
 // Read from Kubernetes Secret
 app.get('/secretValue', async (req, res) => {
   try{
-    const secretName ='assignment2secret'; 
-    const namespace ='mamb0';
+    const secret = process.env.secretValue || "Something went wrong";
 
-    const secretResponse = await k8.readNamespacedSecret(secretName, namespace);
-    const secretValue = Buffer.from(secretResponse.body.data.secretValue, 'base64').toString();
-
-    res.send(secretValue);
+    res.send(secret);
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -62,7 +53,7 @@ app.get('/secretValue', async (req, res) => {
 
 app.get('/envValue', (req, res) => {
   try{
-    const envValue = process.env.value || 'DefaultEnvValue';
+    const envValue = process.env.ENV_VALUE || 'DefaultEnvValue';
 
     res.send(envValue);
   } catch (error) {

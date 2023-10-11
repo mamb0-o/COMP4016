@@ -2,10 +2,10 @@
 #A01182685
 
 Assignment 2:
-Repository: https://github.com/mamb0-o/COMP4016 "It's private, send you an invite"
+Repository: https://github.com/mamb0-o/COMP4016/tree/Assignment-2 "It's private, send you an invite"- note: its branch Assingment 2 main is first Assignment
 Image: mamb0/assign2-image , command to pull- docker pull mamb0/assign2-image:latest
 Kubernetis namespace: mamb0
-Command: docker run -p 8080:8080 mamb0/assign1-images
+Command: docker run -p 30000:30000 mamb0/assign2-image
 Commments: # all the docker commands
 docker login 
 docker build -t assign2-imag:assign2 .
@@ -16,5 +16,17 @@ docker run -p 30000:30000 mamb0/assign2-image
 npm init
 npm install
 #kubernetis commands
+kubectl create -f ./namespace.yaml
 kubectl apply -f <filename.yaml>
 #output
+C:\Users\is2li\Desktop\COMP4016\assignment2>curl localhost:30000/envValue
+environmentSnake
+C:\Users\is2li\Desktop\COMP4016\assignment2>curl localhost:30000/configValue
+snake
+C:\Users\is2li\Desktop\COMP4016\assignment2>curl localhost:30000/secretValue
+secretSnake
+
+#also tested changing secretValue and after restarting container it worked
+here is the base 64 value code= UHJhYiBiZXN0IHByb2Y=
+C:\Users\is2li\Desktop\COMP4016\assignment2>curl localhost:30000/secretValue
+Prab best prof
