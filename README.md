@@ -16,5 +16,5 @@ kubectl create namespace <your-username>
 #namespace was created and used
 mamb0
 
-expected output with commands:
+
 
