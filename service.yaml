@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: assignment3service
+  namespace: mamb0
+spec:
+  selector:
+    app: your-app
+  ports:
+    - name: your-app
+      protocol: TCP
+      port: 30000  # Port 
+      targetPort: 30000  # Target port 
+    - name: busywait
+      protocol: TCP
+      port: 8080  # Port 
+      targetPort: 8080  # Target port for /busywait
+    - name: isalive
+      protocol: TCP
+      port: 30010  # Port for /isAlive
+      targetPort: 30010  # Target port for /isAlive
+  type: LoadBalancer

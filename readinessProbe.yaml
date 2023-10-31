@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment3readinessprobe
+  namespace: probe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-app-container
+          image: mamb0/assign3-image
+          ports:
+            - containerPort: 30010  # Assuming this is the port for /isAlive
+---

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: assignment3stateful
+  namespace: mamb0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-app-container
+          image: mamb0/assign3-image
+          ports:
+            - containerPort: 30000
+          readinessProbe:
+            httpGet:
+              path: /isAlive
+              port: 30010
+          
+---
