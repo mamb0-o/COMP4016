@@ -19,4 +19,12 @@ npm install
 kubectl create -f ./namespace.yaml
 kubectl apply -f <filename.yaml>
 #output
-curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST --data "{\"data\": \"savedSnake\"}" localhost:30000/saveString
+C:\Users\is2li\Desktop\COMP4016\assignment3>curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST --data "{\"data\": \"savedSnake\"}" localhost:30000/saveString
+OK
+C:\Users\is2li\Desktop\COMP4016\assignment3>curl localhost:30000/getString
+{"data":"savedSnake"}
+C:\Users\is2li\Desktop\COMP4016\assignment3>curl localhost:30010/isAlive
+True
+C:\Users\is2li\Desktop\COMP4016\assignment3>curl localhost:8080/busywait
+^C
+C:\Users\is2li\Desktop\COMP4016\assignment3>

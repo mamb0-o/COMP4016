@@ -14,9 +14,9 @@ spec:
     - name: busywait
       protocol: TCP
       port: 8080  # Port 
-      targetPort: 8080  # Target port for /busywait
+      targetPort: 30000  # Target port for /busywait
     - name: isalive
       protocol: TCP
       port: 30010  # Port for /isAlive
-      targetPort: 30010  # Target port for /isAlive
+      targetPort: 30000  # Target port for /isAlive
   type: LoadBalancer

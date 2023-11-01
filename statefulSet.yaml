@@ -21,6 +21,6 @@ spec:
           readinessProbe:
             httpGet:
               path: /isAlive
-              port: 30010
+              port: 30000
           
 ---
